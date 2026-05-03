@@ -1,0 +1,184 @@
+/* main.css — auth + legacy pages only */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f0f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+img, svg, video, iframe { max-width: 100%; height: auto; display: block; }
+
+a { color: #3aafa9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* ── Auth pages ── */
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f4f4;
+    padding: 20px;
+}
+
+.auth-box {
+    background: #fff;
+    padding: 36px 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.auth-logo { font-size: 26px; margin-bottom: 10px; color: #3aafa9; font-weight: bold; }
+.auth-box h2 { margin-bottom: 5px; color: #2b7a78; }
+.auth-subtitle { color: #888; font-size: 14px; margin-bottom: 20px; }
+.auth-link { margin-top: 15px; font-size: 14px; color: #555; }
+
+/* ── Forms ── */
+.form-group { margin-bottom: 15px; text-align: left; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: #3aafa9; }
+
+/* ── Buttons ── */
+.btn-primary {
+    display: inline-block;
+    width: 100%;
+    padding: 11px;
+    background-color: #3aafa9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover { background-color: #2b7a78; }
+
+.btn-danger {
+    display: inline-block;
+    padding: 7px 14px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn-danger:hover { background-color: #c0392b; }
+
+.btn-secondary {
+    display: inline-block;
+    padding: 7px 14px;
+    background-color: #888;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover { background-color: #666; }
+
+/* ── Messages ── */
+.msg { padding: 10px 14px; border-radius: 6px; margin-bottom: 15px; font-size: 14px; text-align: left; }
+.error-msg  { background-color: #fdecea; color: #c0392b; border: 1px solid #f5c6cb; }
+.success-msg { background-color: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+
+/* ── Legacy dashboard layout (non-user, non-admin pages only) ── */
+.dashboard-wrapper { display: flex; min-height: 100vh; }
+
+.legacy-sidebar {
+    width: 220px;
+    background-color: #2b7a78;
+    color: white;
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+.legacy-sidebar .logo {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 20px 20px 20px;
+    border-bottom: 1px solid #3aafa9;
+    color: white;
+}
+
+.legacy-sidebar ul { list-style: none; margin-top: 15px; }
+
+.legacy-sidebar ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: #cce8e7;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.legacy-sidebar ul li a:hover { background-color: #3aafa9; color: white; text-decoration: none; }
+
+.main-content { flex: 1; padding: 30px; background-color: #f5f7f7; min-width: 0; }
+.main-content h1 { margin-bottom: 20px; color: #2b7a78; font-size: 22px; }
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-bottom: 20px;
+}
+
+/* ════════════════════════════════
+   RESPONSIVE — auth + legacy only
+   ════════════════════════════════ */
+
+@media (max-width: 768px) {
+    body { font-size: 14px; overflow-x: hidden; }
+    .container { padding-left: 12px; padding-right: 12px; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+    .auth-box { padding: 28px 20px; }
+    .dashboard-wrapper { flex-direction: column; }
+    .legacy-sidebar { width: 100%; }
+    .main-content { padding: 16px; }
+}
+
+@media (max-width: 480px) {
+    .auth-box { padding: 24px 16px; }
+}
